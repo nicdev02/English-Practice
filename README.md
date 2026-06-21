@@ -106,9 +106,9 @@ The speech marks are embedded at build time — no runtime fetch needed.
 
 1. In the AWS Console, go to **Amazon Polly → Text-to-speech**.
 2. Paste the lesson dialog as plain text — **no speaker labels**, just the lines one after another.
-3. Choose a **Neural** English voice (e.g. *Joanna* or *Amy*).
-4. Under **Additional settings**, enable **Speech Marks** → type: **word**.
-5. Download the `.mp3` and `.marks` files.
+3. Engine: **Long-Form** · Language: **English, US** · Voice: **Danielle, Female**
+4. Under **Additional settings** → File format: **Speech Marks** → Speech marks types: **Word**.
+5. Download the `.mp3` and `.marks` files separately (two export runs needed — one for audio, one for speech marks).
 6. Place them in `public/audio/` and `public/speech-marks/`, then wire them up in `lessons.ts` (see above).
 
 Example input for Polly (Lesson 01):
