@@ -862,6 +862,10 @@ img, svg { display: block; }
   word-break: break-all;
 }
 
+.setup-tab__status--default {
+  color: var(--color-accent);
+}
+
 /* ─── File upload ────────────────────────────────────────────── */
 .file-upload {
   display: flex;

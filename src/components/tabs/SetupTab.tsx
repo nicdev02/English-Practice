@@ -4,11 +4,12 @@ import type { LessonAudio, SpeechMark } from '../../types/lesson'
 interface Props {
   lessonId: string
   audio: LessonAudio | null
+  defaultAudio?: LessonAudio
   save: (audioUrl: string, speechMarks: SpeechMark[]) => void
   clear: () => void
 }
 
-export function SetupTab({ audio, save, clear }: Props) {
+export function SetupTab({ audio, defaultAudio, save, clear }: Props) {
   const [url, setUrl] = useState(audio?.audioUrl ?? '')
   const [marksRaw, setMarksRaw] = useState(
     audio?.speechMarks ? audio.speechMarks.map((m) => JSON.stringify(m)).join('\n') : ''
@@ -177,12 +178,16 @@ export function SetupTab({ audio, save, clear }: Props) {
         )}
       </div>
 
-      {audio && (
+      {audio ? (
         <p className="setup-tab__status">
-          Currently connected: <span className="setup-tab__url">{audio.audioUrl}</span>
+          Override active: <span className="setup-tab__url">{audio.audioUrl}</span>
           {' '}({audio.speechMarks.length} speech marks)
         </p>
-      )}
+      ) : defaultAudio ? (
+        <p className="setup-tab__status setup-tab__status--default">
+          Pre-configured audio active ({defaultAudio.speechMarks.length} speech marks) — add your own above to override.
+        </p>
+      ) : null}
     </div>
   )
 }

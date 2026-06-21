@@ -17,6 +17,7 @@ interface Props {
 export function LessonDetail({ lesson, onBack }: Props) {
   const [tab, setTab] = useState<Tab>('read')
   const { audio, save, clear } = useAudioStorage(lesson.id)
+  const effectiveAudio = audio ?? lesson.defaultAudio ?? null
 
   function goToSetup() {
     setTab('setup')
@@ -55,7 +56,7 @@ export function LessonDetail({ lesson, onBack }: Props) {
             onClick={() => setTab(key)}
           >
             {label}
-            {key === 'listen' && !audio && (
+            {key === 'listen' && !effectiveAudio && (
               <span className="tab-nav__badge" title="No audio connected">·</span>
             )}
           </button>
@@ -65,10 +66,18 @@ export function LessonDetail({ lesson, onBack }: Props) {
       <div className="tab-panel" role="tabpanel">
         {tab === 'read' && <ReadTab lesson={lesson} />}
         {tab === 'listen' && (
-          <ListenTab lesson={lesson} audio={audio} onGoToSetup={goToSetup} />
+          <ListenTab lesson={lesson} audio={effectiveAudio} onGoToSetup={goToSetup} />
         )}
         {tab === 'vocab' && <VocabTab lesson={lesson} />}
-        {tab === 'setup' && <SetupTab lessonId={lesson.id} audio={audio} save={save} clear={clear} />}
+        {tab === 'setup' && (
+          <SetupTab
+            lessonId={lesson.id}
+            audio={audio}
+            defaultAudio={lesson.defaultAudio}
+            save={save}
+            clear={clear}
+          />
+        )}
       </div>
     </div>
   )

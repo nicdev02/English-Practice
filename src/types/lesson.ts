@@ -41,6 +41,7 @@ export interface Lesson {
   decoded: DecodedLine[]
   cleanTranslation: TranslationLine[]
   vocab: VocabItem[]
+  defaultAudio?: LessonAudio
 }
 
 export interface LessonAudio {
