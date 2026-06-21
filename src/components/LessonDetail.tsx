@@ -4,9 +4,8 @@ import { useAudioStorage } from '../hooks/useAudioStorage'
 import { ReadTab } from './tabs/ReadTab'
 import { ListenTab } from './tabs/ListenTab'
 import { VocabTab } from './tabs/VocabTab'
-import { SetupTab } from './tabs/SetupTab'
 
-type Tab = 'read' | 'listen' | 'vocab' | 'setup'
+type Tab = 'read' | 'listen' | 'vocab'
 
 interface Props {
   lesson: Lesson
@@ -15,12 +14,8 @@ interface Props {
 
 export function LessonDetail({ lesson, onBack }: Props) {
   const [tab, setTab] = useState<Tab>('read')
-  const { audio, save, clear } = useAudioStorage(lesson.id)
+  const { audio } = useAudioStorage(lesson.id)
   const effectiveAudio = audio ?? lesson.defaultAudio ?? null
-
-  function goToSetup() {
-    setTab('setup')
-  }
 
   return (
     <div className="lesson-detail-page">
@@ -43,7 +38,6 @@ export function LessonDetail({ lesson, onBack }: Props) {
           { key: 'read', label: 'Read' },
           { key: 'listen', label: 'Listen & follow' },
           { key: 'vocab', label: 'Vocabulary' },
-          { key: 'setup', label: 'Setup' },
         ] as { key: Tab; label: string }[]).map(({ key, label }) => (
           <button
             key={key}
@@ -62,19 +56,8 @@ export function LessonDetail({ lesson, onBack }: Props) {
 
       <div className="tab-panel" role="tabpanel">
         {tab === 'read' && <ReadTab lesson={lesson} />}
-        {tab === 'listen' && (
-          <ListenTab lesson={lesson} audio={effectiveAudio} onGoToSetup={goToSetup} />
-        )}
+        {tab === 'listen' && <ListenTab lesson={lesson} audio={effectiveAudio} />}
         {tab === 'vocab' && <VocabTab lesson={lesson} />}
-        {tab === 'setup' && (
-          <SetupTab
-            lessonId={lesson.id}
-            audio={audio}
-            defaultAudio={lesson.defaultAudio}
-            save={save}
-            clear={clear}
-          />
-        )}
       </div>
     </div>
   )

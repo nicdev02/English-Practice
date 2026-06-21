@@ -7,7 +7,6 @@ type SpeakerFilter = 'both' | 'A' | 'B'
 interface Props {
   lesson: Lesson
   audio: LessonAudio | null
-  onGoToSetup: () => void
 }
 
 function normalize(s: string) {
@@ -28,7 +27,7 @@ function buildMarkToWordIdx(marks: SpeechMark[], displayedWords: string[]): numb
   return result
 }
 
-export function ListenTab({ lesson, audio, onGoToSetup }: Props) {
+export function ListenTab({ lesson, audio }: Props) {
   const [activeWordIdx, setActiveWordIdx] = useState(-1)
   const [speakerFilter, setSpeakerFilter] = useState<SpeakerFilter>('both')
 
@@ -77,13 +76,7 @@ export function ListenTab({ lesson, audio, onGoToSetup }: Props) {
     return (
       <div className="listen-tab__no-audio">
         <div className="no-audio-box">
-          <p className="no-audio-box__title">No audio connected yet</p>
-          <p className="no-audio-box__body">
-            Generate audio with Amazon Polly and add the URL + Speech Marks in the Setup tab.
-          </p>
-          <button className="btn btn--primary" onClick={onGoToSetup}>
-            Go to Setup
-          </button>
+          <p className="no-audio-box__title">No audio available</p>
         </div>
       </div>
     )
