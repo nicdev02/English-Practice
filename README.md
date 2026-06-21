@@ -119,6 +119,22 @@ Nothing special — maybe a walk if the weather holds. What about you?
 ...
 ```
 
+Example input for Polly (Lesson 05):
+```
+Hey, are we still on for tomorrow?
+That's actually why I'm messaging. I'm so sorry — something's come up and I'm going to have to cancel.
+Oh no. Is everything okay?
+Yeah, it's nothing serious. My landlord's coming round in the morning and I completely forgot to put it in my calendar.
+Ah, those things always seem to happen at the worst time.
+I know, I feel awful about it. I was really looking forward to it.
+Don't worry about it. These things happen.
+Could we move it to next week? I'm free most of Thursday or Friday.
+Thursday works for me. Same place, same time?
+Perfect. I'll put it in my calendar right now so I don't double-book myself again.
+Ha, fair enough. See you Thursday then.
+See you then. And sorry again — I really appreciate you being so understanding.
+```
+
 ---
 
 ## Planned lessons
@@ -132,7 +148,6 @@ Nothing special — maybe a walk if the weather holds. What about you?
 
 ### Alltag
 
-- **Canceling plans** — short-notice apologies, rescheduling, common polite excuses
 - **At the doctor's** — describing symptoms, asking questions, understanding what's said
 - **Something went wrong** — politely complaining (wrong order, lost parcel) without sounding aggressive
 - **Small talk at a party** — starting conversations with strangers, keeping them going, graceful exits

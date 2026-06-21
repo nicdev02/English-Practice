@@ -1,0 +1,116 @@
+{
+  "id": "05-canceling-plans",
+  "title": "Canceling plans",
+  "eyebrow": "Einheit 2 · Everyday conversation",
+  "tag": "Alltag",
+  "locked": false,
+  "lines": [
+    { "speaker": "B", "speakerName": "Emma", "text": "Hey, are we still on for tomorrow?" },
+    { "speaker": "A", "speakerName": "Sarah", "text": "That's actually why I'm messaging. I'm so sorry — something's come up and I'm going to have to cancel." },
+    { "speaker": "B", "speakerName": "Emma", "text": "Oh no. Is everything okay?" },
+    { "speaker": "A", "speakerName": "Sarah", "text": "Yeah, it's nothing serious. My landlord's coming round in the morning and I completely forgot to put it in my calendar." },
+    { "speaker": "B", "speakerName": "Emma", "text": "Ah, those things always seem to happen at the worst time." },
+    { "speaker": "A", "speakerName": "Sarah", "text": "I know, I feel awful about it. I was really looking forward to it." },
+    { "speaker": "B", "speakerName": "Emma", "text": "Don't worry about it. These things happen." },
+    { "speaker": "A", "speakerName": "Sarah", "text": "Could we move it to next week? I'm free most of Thursday or Friday." },
+    { "speaker": "B", "speakerName": "Emma", "text": "Thursday works for me. Same place, same time?" },
+    { "speaker": "A", "speakerName": "Sarah", "text": "Perfect. I'll put it in my calendar right now so I don't double-book myself again." },
+    { "speaker": "B", "speakerName": "Emma", "text": "Ha, fair enough. See you Thursday then." },
+    { "speaker": "A", "speakerName": "Sarah", "text": "See you then. And sorry again — I really appreciate you being so understanding." }
+  ],
+  "decoded": [
+    {
+      "speaker": "B",
+      "original": "Hey, are we still on for tomorrow?",
+      "wordForWord": "Hey, sind wir noch an für morgen?"
+    },
+    {
+      "speaker": "A",
+      "original": "That's actually why I'm messaging. I'm so sorry — something's come up and I'm going to have to cancel.",
+      "wordForWord": "Das ist eigentlich warum ich bin Nachrichten schickend. Ich bin so entschuldigt — etwas ist aufgekommen und ich gehe haben zu abzusagen."
+    },
+    {
+      "speaker": "B",
+      "original": "Oh no. Is everything okay?",
+      "wordForWord": "Oh nein. Ist alles okay?"
+    },
+    {
+      "speaker": "A",
+      "original": "Yeah, it's nothing serious. My landlord's coming round in the morning and I completely forgot to put it in my calendar.",
+      "wordForWord": "Ja, es ist nichts Ernstes. Mein Vermieter kommt vorbei am Morgen und ich habe komplett vergessen zu legen es in meinen Kalender."
+    },
+    {
+      "speaker": "B",
+      "original": "Ah, those things always seem to happen at the worst time.",
+      "wordForWord": "Ah, diese Dinge scheinen immer zu passieren zur schlimmsten Zeit."
+    },
+    {
+      "speaker": "A",
+      "original": "I know, I feel awful about it. I was really looking forward to it.",
+      "wordForWord": "Ich weiß, ich fühle schrecklich darüber. Ich war wirklich vorausschauend dazu."
+    },
+    {
+      "speaker": "B",
+      "original": "Don't worry about it. These things happen.",
+      "wordForWord": "Sorg dich nicht darüber. Diese Dinge passieren."
+    },
+    {
+      "speaker": "A",
+      "original": "Could we move it to next week? I'm free most of Thursday or Friday.",
+      "wordForWord": "Könnten wir bewegen es zu nächster Woche? Ich bin frei meistens von Donnerstag oder Freitag."
+    },
+    {
+      "speaker": "B",
+      "original": "Thursday works for me. Same place, same time?",
+      "wordForWord": "Donnerstag funktioniert für mich. Gleicher Ort, gleiche Zeit?"
+    },
+    {
+      "speaker": "A",
+      "original": "Perfect. I'll put it in my calendar right now so I don't double-book myself again.",
+      "wordForWord": "Perfekt. Ich werde legen es in meinen Kalender genau jetzt damit ich nicht doppelt-buche mich wieder."
+    },
+    {
+      "speaker": "B",
+      "original": "Ha, fair enough. See you Thursday then.",
+      "wordForWord": "Ha, fair genug. Sehe dich Donnerstag dann."
+    },
+    {
+      "speaker": "A",
+      "original": "See you then. And sorry again — I really appreciate you being so understanding.",
+      "wordForWord": "Sehe dich dann. Und entschuldigung wieder — ich schätze wirklich dich zu sein so verständnisvoll."
+    }
+  ],
+  "cleanTranslation": [
+    { "speaker": "B", "text": "Hey, haben wir morgen noch was geplant?" },
+    { "speaker": "A", "text": "Genau deshalb schreibe ich dir. Es tut mir wirklich leid — es ist etwas dazwischengekommen und ich muss leider absagen." },
+    { "speaker": "B", "text": "Oh nein. Ist alles in Ordnung?" },
+    { "speaker": "A", "text": "Ja, nichts Schlimmes. Mein Vermieter kommt am Vormittag vorbei und ich hab das komplett vergessen einzutragen." },
+    { "speaker": "B", "text": "Ach, so was passiert immer zum ungünstigsten Zeitpunkt." },
+    { "speaker": "A", "text": "Ich weiß, ich fühle mich wirklich schlecht deswegen. Ich hatte mich schon so gefreut." },
+    { "speaker": "B", "text": "Kein Problem. Das kann jedem mal passieren." },
+    { "speaker": "A", "text": "Könnten wir es auf nächste Woche verschieben? Donnerstag oder Freitag wäre ich meistens frei." },
+    { "speaker": "B", "text": "Donnerstag passt mir. Gleicher Ort, gleiche Uhrzeit?" },
+    { "speaker": "A", "text": "Perfekt. Ich trag es sofort in meinen Kalender ein, damit ich mich nicht nochmal verplane." },
+    { "speaker": "B", "text": "Ha, sinnvoll. Dann bis Donnerstag." },
+    { "speaker": "A", "text": "Bis dann. Und nochmals sorry — ich weiß das wirklich zu schätzen, dass du so verständnisvoll bist." }
+  ],
+  "vocab": [
+    { "en": "are we still on for …?", "de": "haben wir … noch geplant? / läuft es noch?" },
+    { "en": "something's come up", "de": "es ist etwas dazwischengekommen" },
+    { "en": "to come up", "de": "dazwischenkommen / sich ergeben" },
+    { "en": "to cancel", "de": "absagen / stornieren" },
+    { "en": "Is everything okay?", "de": "Ist alles in Ordnung?" },
+    { "en": "nothing serious", "de": "nichts Schlimmes / nichts Ernstes" },
+    { "en": "to come round", "de": "vorbeikommen / zu Besuch kommen" },
+    { "en": "to feel awful about something", "de": "sich wirklich schlecht wegen etwas fühlen" },
+    { "en": "to look forward to something", "de": "sich auf etwas freuen" },
+    { "en": "Don't worry about it.", "de": "Kein Problem. / Mach dir keine Sorgen." },
+    { "en": "These things happen.", "de": "Das kann jedem passieren. / So was passiert eben." },
+    { "en": "to move something to", "de": "etwas verschieben auf" },
+    { "en": "works for me", "de": "passt mir / ist gut für mich" },
+    { "en": "to double-book oneself", "de": "sich doppelt verplanen" },
+    { "en": "fair enough", "de": "stimmt / einverstanden / in Ordnung" },
+    { "en": "to appreciate something", "de": "etwas zu schätzen wissen" },
+    { "en": "understanding", "de": "verständnisvoll" }
+  ]
+}
