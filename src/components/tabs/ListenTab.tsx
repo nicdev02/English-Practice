@@ -1,6 +1,7 @@
-import { useState, useCallback, useMemo } from 'react'
+import { useState, useCallback, useMemo, useRef } from 'react'
 import type { Lesson, LessonAudio, SpeechMark } from '../../types/lesson'
 import { AudioPlayer } from '../AudioPlayer'
+import type { AudioPlayerHandle } from '../AudioPlayer'
 
 type SpeakerFilter = 'both' | 'A' | 'B'
 
@@ -30,6 +31,7 @@ function buildMarkToWordIdx(marks: SpeechMark[], displayedWords: string[]): numb
 export function ListenTab({ lesson, audio }: Props) {
   const [activeWordIdx, setActiveWordIdx] = useState(-1)
   const [speakerFilter, setSpeakerFilter] = useState<SpeakerFilter>('both')
+  const audioPlayerRef = useRef<AudioPlayerHandle>(null)
 
   const speakerNames = {
     A: lesson.lines.find((l) => l.speaker === 'A')?.speakerName ?? 'A',
@@ -47,6 +49,26 @@ export function ListenTab({ lesson, audio }: Props) {
   const markToWordIdx = useMemo(
     () => (audio?.speechMarks ? buildMarkToWordIdx(audio.speechMarks, allWords) : []),
     [audio, allWords]
+  )
+
+  const wordToMarkTime = useMemo(() => {
+    if (!audio?.speechMarks) return []
+    const result: number[] = []
+    audio.speechMarks.forEach((mark, i) => {
+      const wordIdx = markToWordIdx[i]
+      if (wordIdx !== -1) result[wordIdx] = mark.time
+    })
+    return result
+  }, [audio, markToWordIdx])
+
+  const handleWordClick = useCallback(
+    (wordIdx: number) => {
+      const timeMs = wordToMarkTime[wordIdx]
+      if (timeMs == null) return
+      audioPlayerRef.current?.seek(timeMs / 1000)
+      audioPlayerRef.current?.play()
+    },
+    [wordToMarkTime]
   )
 
   const handleTimeUpdate = useCallback(
@@ -93,7 +115,8 @@ export function ListenTab({ lesson, audio }: Props) {
       return (
         <span
           key={`w-${lineIdx}-${chunkIdx}`}
-          className={`listen-word${activeWordIdx === currentIdx ? ' listen-word--active' : ''}`}
+          className={`listen-word${activeWordIdx === currentIdx ? ' listen-word--active' : ''}${audio ? ' listen-word--clickable' : ''}`}
+          onClick={audio ? () => handleWordClick(currentIdx) : undefined}
         >
           {chunk}
         </span>
@@ -131,7 +154,7 @@ export function ListenTab({ lesson, audio }: Props) {
       </div>
 
       <div className="listen-tab__player">
-        <AudioPlayer src={audio.audioUrl} onTimeUpdate={handleTimeUpdate} onEnded={handleEnded} />
+        <AudioPlayer ref={audioPlayerRef} src={audio.audioUrl} onTimeUpdate={handleTimeUpdate} onEnded={handleEnded} />
       </div>
     </div>
   )

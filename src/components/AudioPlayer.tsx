@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect, useCallback } from 'react'
+import { useRef, useState, useEffect, useCallback, forwardRef, useImperativeHandle } from 'react'
 
 interface Props {
   src: string
@@ -6,7 +6,15 @@ interface Props {
   onEnded?: () => void
 }
 
-export function AudioPlayer({ src, onTimeUpdate, onEnded }: Props) {
+export interface AudioPlayerHandle {
+  seek: (timeS: number) => void
+  play: () => void
+}
+
+export const AudioPlayer = forwardRef<AudioPlayerHandle, Props>(function AudioPlayer(
+  { src, onTimeUpdate, onEnded },
+  ref
+) {
   const audioRef = useRef<HTMLAudioElement>(null)
   const rafRef = useRef<number>(0)
   const [playing, setPlaying] = useState(false)
@@ -28,6 +36,19 @@ export function AudioPlayer({ src, onTimeUpdate, onEnded }: Props) {
   useEffect(() => {
     return () => cancelAnimationFrame(rafRef.current)
   }, [])
+
+  useImperativeHandle(ref, () => ({
+    seek(timeS: number) {
+      const audio = audioRef.current
+      if (!audio) return
+      audio.currentTime = timeS
+      setCurrentTime(timeS)
+      onTimeUpdate?.(timeS * 1000)
+    },
+    play() {
+      audioRef.current?.play()
+    },
+  }))
 
   function togglePlay() {
     const audio = audioRef.current
@@ -141,4 +162,4 @@ export function AudioPlayer({ src, onTimeUpdate, onEnded }: Props) {
       </div>
     </div>
   )
-}
+})

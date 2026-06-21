@@ -595,6 +595,15 @@ img, svg { display: block; }
   color: var(--color-text);
 }
 
+.listen-word--clickable {
+  cursor: pointer;
+}
+
+.listen-word--clickable:hover {
+  background-color: var(--color-accent-highlight);
+  opacity: 0.6;
+}
+
 .listen-tab__player {
   position: sticky;
   bottom: 1.25rem;
