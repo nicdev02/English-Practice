@@ -5,6 +5,12 @@ interface Props {
   onSelect: (lesson: Lesson) => void
 }
 
+const CATEGORIES = [
+  { title: 'Lektion 1', subtitle: 'Data Science', tag: 'Uni / Data Science' },
+  { title: 'Lektion 2', subtitle: 'Konferenz', tag: 'Konferenz' },
+  { title: 'Lektion 3', subtitle: 'Alltag', tag: 'Alltag' },
+]
+
 export function LessonList({ lessons, onSelect }: Props) {
   return (
     <div className="lesson-list-page">
@@ -17,9 +23,23 @@ export function LessonList({ lessons, onSelect }: Props) {
       </header>
 
       <main className="lesson-list">
-        {lessons.map((lesson) => (
-          <LessonCard key={lesson.id} lesson={lesson} onSelect={onSelect} />
-        ))}
+        {CATEGORIES.map((cat) => {
+          const catLessons = lessons.filter((l) => l.tag === cat.tag)
+          if (catLessons.length === 0) return null
+          return (
+            <section key={cat.tag} className="lesson-category">
+              <div className="lesson-category__header">
+                <p className="lesson-category__number">{cat.title}</p>
+                <h2 className="lesson-category__label">{cat.subtitle}</h2>
+              </div>
+              <div className="lesson-category__cards">
+                {catLessons.map((lesson) => (
+                  <LessonCard key={lesson.id} lesson={lesson} onSelect={onSelect} />
+                ))}
+              </div>
+            </section>
+          )
+        })}
       </main>
     </div>
   )
@@ -42,7 +62,6 @@ function LessonCard({ lesson, onSelect }: { lesson: Lesson; onSelect: (l: Lesson
       <div className="lesson-card__body">
         <p className="lesson-card__eyebrow">{lesson.eyebrow}</p>
         <h2 className="lesson-card__title">{lesson.title}</h2>
-        <span className="lesson-card__tag">{lesson.tag}</span>
       </div>
       {locked && (
         <div className="lesson-card__lock" aria-label="Coming soon">

@@ -16,17 +16,29 @@ function normalize(s: string) {
 
 // Maps each speech mark index to its displayed-word index.
 // Speech marks for words not shown (e.g. speaker labels sent to Polly) get -1.
+// Polly splits underscore-joined identifiers (e.g. df_income_filtered → df_, income_, filtered),
+// so consecutive marks with trailing _ are accumulated before matching.
 function buildMarkToWordIdx(marks: SpeechMark[], displayedWords: string[]): number[] {
   const result = new Array(marks.length).fill(-1)
   let wordPtr = 0
-  for (let i = 0; i < marks.length && wordPtr < displayedWords.length; i++) {
+  let i = 0
+  while (i < marks.length && wordPtr < displayedWords.length) {
     while (wordPtr < displayedWords.length && normalize(displayedWords[wordPtr]) === '') {
       wordPtr++
     }
     if (wordPtr >= displayedWords.length) break
-    if (normalize(marks[i].value) === normalize(displayedWords[wordPtr])) {
+    let combined = marks[i].value
+    let j = i
+    while (combined.endsWith('_') && j + 1 < marks.length) {
+      j++
+      combined += marks[j].value
+    }
+    if (normalize(combined) === normalize(displayedWords[wordPtr])) {
       result[i] = wordPtr
+      i = j + 1
       wordPtr++
+    } else {
+      i++
     }
   }
   return result
