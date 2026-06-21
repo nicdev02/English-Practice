@@ -5,24 +5,24 @@
   "tag": "Konferenz",
   "locked": false,
   "lines": [
-    { "speaker": "B", "speakerName": "Sina", "text": "Hi, I don't think we've met. I'm Sina — I'm with the University of Edinburgh, working on NLP." },
+    { "speaker": "B", "speakerName": "Sina", "text": "Hi, I don't think we've met. I'm Sina. I'm with the University of Edinburgh, working on NLP." },
     { "speaker": "A", "speakerName": "Sarah", "text": "Nice to meet you, Sina. I'm Sarah. I'm doing my PhD in Munich, and I'm right in the middle of a data science project at the moment." },
     { "speaker": "B", "speakerName": "Sina", "text": "Oh, what's your project about?" },
-    { "speaker": "A", "speakerName": "Sarah", "text": "I'm looking at missing data in survey datasets — specifically whether standard imputation methods still hold up when the missingness isn't random." },
+    { "speaker": "A", "speakerName": "Sarah", "text": "I'm looking at missing data in survey datasets, specifically whether standard imputation methods still hold up when the missingness isn't random." },
     { "speaker": "B", "speakerName": "Sina", "text": "Interesting. That must have some real-world applications." },
     { "speaker": "A", "speakerName": "Sarah", "text": "It does. The tricky part is convincing people that cleaning the data is actually the research, not just the preparation stage." },
-    { "speaker": "B", "speakerName": "Sina", "text": "Ha — that's a battle everyone fights. Are you presenting here?" },
+    { "speaker": "B", "speakerName": "Sina", "text": "Ha, that's a battle everyone fights. Are you presenting here?" },
     { "speaker": "A", "speakerName": "Sarah", "text": "Yes, I have a poster tomorrow morning. It's my first time presenting in English at a conference, so I'm a little nervous." },
-    { "speaker": "B", "speakerName": "Sina", "text": "Your English sounds completely fine to me. Don't overthink it — just have the conversation, the way we're having it now." },
+    { "speaker": "B", "speakerName": "Sina", "text": "Your English sounds completely fine to me. Don't overthink it, just have the conversation, the way we're having it now." },
     { "speaker": "A", "speakerName": "Sarah", "text": "That's easy to say. I tend to go blank when I feel like I'm being evaluated." },
     { "speaker": "B", "speakerName": "Sina", "text": "Everyone does. The trick is to find something in the work that genuinely excites you and lead with that." },
     { "speaker": "A", "speakerName": "Sarah", "text": "Mine would be the moment when the patterns in the data suddenly started making sense — like the data was telling a story." },
-    { "speaker": "B", "speakerName": "Sina", "text": "That's exactly the moment worth talking about. Good luck tomorrow — I'll look out for your poster." }
+    { "speaker": "B", "speakerName": "Sina", "text": "That's exactly the moment worth talking about. Good luck tomorrow, I'll look out for your poster." }
   ],
   "decoded": [
     {
       "speaker": "B",
-      "original": "Hi, I don't think we've met. I'm Sina — I'm with the University of Edinburgh, working on NLP.",
+      "original": "Hi, I don't think we've met. I'm Sina. I'm with the University of Edinburgh, working on NLP.",
       "wordForWord": "Hi, ich denke nicht wir haben uns getroffen. Ich bin Sina — ich bin mit der Universität von Edinburgh, arbeitend an NLP."
     },
     {
@@ -37,7 +37,7 @@
     },
     {
       "speaker": "A",
-      "original": "I'm looking at missing data in survey datasets — specifically whether standard imputation methods still hold up when the missingness isn't random.",
+      "original": "I'm looking at missing data in survey datasets, specifically whether standard imputation methods still hold up when the missingness isn't random.",
       "wordForWord": "Ich schaue auf fehlende Daten in Umfrage-Datensätzen — spezifisch ob Standard-Imputation-Methoden noch standhalten wenn das Fehlen nicht zufällig ist."
     },
     {
@@ -52,7 +52,7 @@
     },
     {
       "speaker": "B",
-      "original": "Ha — that's a battle everyone fights. Are you presenting here?",
+      "original": "Ha, that's a battle everyone fights. Are you presenting here?",
       "wordForWord": "Ha — das ist ein Kampf den jeder kämpft. Präsentierst du hier?"
     },
     {
@@ -62,7 +62,7 @@
     },
     {
       "speaker": "B",
-      "original": "Your English sounds completely fine to me. Don't overthink it — just have the conversation, the way we're having it now.",
+      "original": "Your English sounds completely fine to me. Don't overthink it, just have the conversation, the way we're having it now.",
       "wordForWord": "Dein Englisch klingt komplett gut für mich. Denke nicht zu viel nach — hab einfach das Gespräch, so wie wir es haben jetzt."
     },
     {
@@ -82,7 +82,7 @@
     },
     {
       "speaker": "B",
-      "original": "That's exactly the moment worth talking about. Good luck tomorrow — I'll look out for your poster.",
+      "original": "That's exactly the moment worth talking about. Good luck tomorrow, I'll look out for your poster.",
       "wordForWord": "Das ist genau der Moment wert zu reden über. Viel Glück morgen — ich werde Ausschau halten nach deinem Poster."
     }
   ],
