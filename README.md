@@ -116,3 +116,27 @@ Yeah, nearly. What are you up to this weekend?
 Nothing special — maybe a walk if the weather holds. What about you?
 ...
 ```
+
+---
+
+## Planned lessons
+
+### Uni / Data Science
+
+- **The code review** — Emma looks over Sarah's code; constructive feedback, explaining logic, accepting critique
+- **Presenting to non-technical people** — Sarah explains a model without jargon to her professor or a stakeholder
+- **Disagreeing in a meeting** — politely but clearly pushing back on someone else's point
+- **Asking for feedback on a paper** — giving and receiving written feedback on a draft
+- **The job interview** — Emma plays the interviewer; how to talk about your work under pressure
+
+### Alltag
+
+- **Canceling plans** — short-notice apologies, rescheduling, common polite excuses
+- **At the doctor's** — describing symptoms, asking questions, understanding what's said
+- **Something went wrong** — politely complaining (wrong order, lost parcel) without sounding aggressive
+- **Small talk at a party** — starting conversations with strangers, keeping them going, graceful exits
+
+### Fortgeschritten
+
+- **I don't understand** — asking targeted follow-up questions without seeming incompetent ("Could you walk me through that again?")
+- **Writing that email** — Sarah and Emma discuss how to phrase a tricky message (too harsh? too soft?)

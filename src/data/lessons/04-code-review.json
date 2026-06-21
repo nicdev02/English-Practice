@@ -1,0 +1,157 @@
+{
+  "id": "04-code-review",
+  "title": "The code review",
+  "eyebrow": "Lesson 04 · Uni / Data Science",
+  "tag": "Uni / Data Science",
+  "locked": false,
+  "lines": [
+    { "speaker": "B", "speakerName": "Emma", "text": "So I've had a look at your script. Want to go through it together?" },
+    { "speaker": "A", "speakerName": "Sarah", "text": "Sure. Let me pull it up." },
+    { "speaker": "B", "speakerName": "Emma", "text": "I'll start with the variable names. This one — df2 — what does it hold?" },
+    { "speaker": "A", "speakerName": "Sarah", "text": "That's the filtered dataset. After dropping rows where income is missing." },
+    { "speaker": "B", "speakerName": "Emma", "text": "Right. Something like df_income_filtered would make it a lot easier to follow." },
+    { "speaker": "A", "speakerName": "Sarah", "text": "Fair point. I always tell myself I'll clean up the names at the end — and then never quite get around to it." },
+    { "speaker": "B", "speakerName": "Emma", "text": "The problem is that other people — or future you — can't read your mind." },
+    { "speaker": "A", "speakerName": "Sarah", "text": "That one landed. What else?" },
+    { "speaker": "B", "speakerName": "Emma", "text": "This loop. Can you walk me through what it's doing?" },
+    { "speaker": "A", "speakerName": "Sarah", "text": "It checks each column for outliers and flags them with a one." },
+    { "speaker": "B", "speakerName": "Emma", "text": "The logic makes sense. But I'd pull it out into its own function — something like flag_outliers." },
+    { "speaker": "A", "speakerName": "Sarah", "text": "I wasn't sure it was worth it for something so short." },
+    { "speaker": "B", "speakerName": "Emma", "text": "Even small things benefit from a name. Then you don't have to read the code to know what it does." },
+    { "speaker": "A", "speakerName": "Sarah", "text": "Fair enough. I'll refactor it. Anything else?" },
+    { "speaker": "B", "speakerName": "Emma", "text": "One comment that just says 'fix later'. It's been there a while." },
+    { "speaker": "A", "speakerName": "Sarah", "text": "That's the timestamp issue. The format keeps changing between files and I haven't found a clean solution yet." },
+    { "speaker": "B", "speakerName": "Emma", "text": "Worth raising in the meeting — we've all hit that. Overall though, it's solid work." },
+    { "speaker": "A", "speakerName": "Sarah", "text": "Good to hear. I find it surprisingly hard to judge my own code." }
+  ],
+  "decoded": [
+    {
+      "speaker": "B",
+      "original": "So I've had a look at your script. Want to go through it together?",
+      "wordForWord": "Also ich habe einen Blick auf dein Skript gehabt. Willst du durchgehen es zusammen?"
+    },
+    {
+      "speaker": "A",
+      "original": "Sure. Let me pull it up.",
+      "wordForWord": "Sicher. Lass mich es hochziehen."
+    },
+    {
+      "speaker": "B",
+      "original": "I'll start with the variable names. This one — df2 — what does it hold?",
+      "wordForWord": "Ich werde starten mit den Variablen-Namen. Dieser eine — df2 — was hält er?"
+    },
+    {
+      "speaker": "A",
+      "original": "That's the filtered dataset. After dropping rows where income is missing.",
+      "wordForWord": "Das ist der gefilterte Datensatz. Nach fallen-lassen von Zeilen wo Einkommen fehlt."
+    },
+    {
+      "speaker": "B",
+      "original": "Right. Something like df_income_filtered would make it a lot easier to follow.",
+      "wordForWord": "Richtig. Etwas wie df_income_filtered würde machen es eine Menge leichter zu folgen."
+    },
+    {
+      "speaker": "A",
+      "original": "Fair point. I always tell myself I'll clean up the names at the end — and then never quite get around to it.",
+      "wordForWord": "Fairer Punkt. Ich sage mir immer ich werde aufräumen die Namen am Ende — und dann nie ganz komme herum dazu."
+    },
+    {
+      "speaker": "B",
+      "original": "The problem is that other people — or future you — can't read your mind.",
+      "wordForWord": "Das Problem ist dass andere Leute — oder zukünftiger du — können nicht lesen deinen Verstand."
+    },
+    {
+      "speaker": "A",
+      "original": "That one landed. What else?",
+      "wordForWord": "Das eine landete. Was sonst?"
+    },
+    {
+      "speaker": "B",
+      "original": "This loop. Can you walk me through what it's doing?",
+      "wordForWord": "Diese Schleife. Kannst du gehen mich durch was es tut?"
+    },
+    {
+      "speaker": "A",
+      "original": "It checks each column for outliers and flags them with a one.",
+      "wordForWord": "Es prüft jede Spalte für Ausreißer und markiert sie mit einer Eins."
+    },
+    {
+      "speaker": "B",
+      "original": "The logic makes sense. But I'd pull it out into its own function — something like flag_outliers.",
+      "wordForWord": "Die Logik macht Sinn. Aber ich würde ziehen es heraus in seine eigene Funktion — etwas wie flag_outliers."
+    },
+    {
+      "speaker": "A",
+      "original": "I wasn't sure it was worth it for something so short.",
+      "wordForWord": "Ich war nicht sicher es war es wert für etwas so kurzes."
+    },
+    {
+      "speaker": "B",
+      "original": "Even small things benefit from a name. Then you don't have to read the code to know what it does.",
+      "wordForWord": "Sogar kleine Dinge profitieren von einem Namen. Dann musst du nicht lesen den Code um zu wissen was er tut."
+    },
+    {
+      "speaker": "A",
+      "original": "Fair enough. I'll refactor it. Anything else?",
+      "wordForWord": "Fair genug. Ich werde refaktorieren es. Irgendetwas sonst?"
+    },
+    {
+      "speaker": "B",
+      "original": "One comment that just says 'fix later'. It's been there a while.",
+      "wordForWord": "Ein Kommentar der nur sagt 'fix später'. Er ist gewesen dort eine Weile."
+    },
+    {
+      "speaker": "A",
+      "original": "That's the timestamp issue. The format keeps changing between files and I haven't found a clean solution yet.",
+      "wordForWord": "Das ist das Zeitstempel-Problem. Das Format hält ändernd zwischen Dateien und ich habe nicht gefunden eine saubere Lösung noch."
+    },
+    {
+      "speaker": "B",
+      "original": "Worth raising in the meeting — we've all hit that. Overall though, it's solid work.",
+      "wordForWord": "Wert zu erheben in dem Meeting — wir alle haben getroffen das. Insgesamt obwohl, es ist solide Arbeit."
+    },
+    {
+      "speaker": "A",
+      "original": "Good to hear. I find it surprisingly hard to judge my own code.",
+      "wordForWord": "Gut zu hören. Ich finde es überraschend schwer zu urteilen meinen eigenen Code."
+    }
+  ],
+  "cleanTranslation": [
+    { "speaker": "B", "text": "Ich hab mir dein Skript angeschaut. Wollen wir es gemeinsam durchgehen?" },
+    { "speaker": "A", "text": "Klar. Ich ruf's kurz auf." },
+    { "speaker": "B", "text": "Ich fang mit den Variablennamen an. Dieser hier — df2 — was steckt da drin?" },
+    { "speaker": "A", "text": "Das ist der gefilterte Datensatz — nach dem Entfernen der Zeilen, bei denen das Einkommen fehlt." },
+    { "speaker": "B", "text": "Genau. Etwas wie df_income_filtered würde es deutlich leichter lesbar machen." },
+    { "speaker": "A", "text": "Guter Punkt. Ich sage mir immer, ich räume die Namen am Ende auf — und dann komme ich nie dazu." },
+    { "speaker": "B", "text": "Das Problem ist: andere Leute — oder du selbst in ein paar Monaten — können keine Gedanken lesen." },
+    { "speaker": "A", "text": "Das hat gesessen. Was noch?" },
+    { "speaker": "B", "text": "Diese Schleife hier. Kannst du mir erklären, was sie macht?" },
+    { "speaker": "A", "text": "Sie prüft jede Spalte auf Ausreißer und markiert sie mit einer Eins." },
+    { "speaker": "B", "text": "Die Logik ergibt Sinn. Aber ich würde das in eine eigene Funktion auslagern — sowas wie flag_outliers." },
+    { "speaker": "A", "text": "Ich war mir nicht sicher, ob sich das für etwas so Kurzes lohnt." },
+    { "speaker": "B", "text": "Auch kleine Dinge profitieren von einem Namen. Dann muss man den Code gar nicht erst lesen, um zu wissen, was er tut." },
+    { "speaker": "A", "text": "Stimmt. Ich refaktor das noch. Noch was?" },
+    { "speaker": "B", "text": "Ein Kommentar, der nur 'fix later' sagt. Der steht schon eine Weile da." },
+    { "speaker": "A", "text": "Das ist das Zeitstempel-Problem. Das Format wechselt ständig zwischen den Dateien und ich hab noch keine saubere Lösung gefunden." },
+    { "speaker": "B", "text": "Das ist was fürs Meeting — das Problem kennen wir alle. Aber insgesamt: solide Arbeit." },
+    { "speaker": "A", "text": "Schön zu hören. Ich finde es überraschend schwer, meinen eigenen Code einzuschätzen." }
+  ],
+  "vocab": [
+    { "en": "to have a look at something", "de": "sich etwas anschauen" },
+    { "en": "to go through something", "de": "etwas durchgehen / gemeinsam anschauen" },
+    { "en": "to pull something up", "de": "etwas aufrufen / auf dem Bildschirm anzeigen" },
+    { "en": "fair point", "de": "guter Punkt / berechtigte Anmerkung" },
+    { "en": "to get around to something", "de": "dazu kommen, etwas zu tun" },
+    { "en": "to read someone's mind", "de": "Gedanken lesen" },
+    { "en": "that one landed", "de": "das hat gesessen / das hat getroffen" },
+    { "en": "to walk someone through something", "de": "jemandem etwas erklären / Schritt für Schritt durchgehen" },
+    { "en": "to flag", "de": "markieren / kennzeichnen" },
+    { "en": "to pull something out into", "de": "etwas auslagern in" },
+    { "en": "to be worth it", "de": "sich lohnen" },
+    { "en": "to benefit from", "de": "profitieren von" },
+    { "en": "fair enough", "de": "stimmt / einverstanden / in Ordnung" },
+    { "en": "to refactor", "de": "refaktorieren / Code umstrukturieren" },
+    { "en": "overall", "de": "insgesamt / alles in allem" },
+    { "en": "solid work", "de": "solide Arbeit / gute Arbeit" }
+  ]
+}
