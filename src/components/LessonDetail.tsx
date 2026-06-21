@@ -16,7 +16,7 @@ interface Props {
 
 export function LessonDetail({ lesson, onBack }: Props) {
   const [tab, setTab] = useState<Tab>('read')
-  const { audio } = useAudioStorage(lesson.id)
+  const { audio, save, clear } = useAudioStorage(lesson.id)
 
   function goToSetup() {
     setTab('setup')
@@ -68,7 +68,7 @@ export function LessonDetail({ lesson, onBack }: Props) {
           <ListenTab lesson={lesson} audio={audio} onGoToSetup={goToSetup} />
         )}
         {tab === 'vocab' && <VocabTab lesson={lesson} />}
-        {tab === 'setup' && <SetupTab lessonId={lesson.id} />}
+        {tab === 'setup' && <SetupTab lessonId={lesson.id} audio={audio} save={save} clear={clear} />}
       </div>
     </div>
   )

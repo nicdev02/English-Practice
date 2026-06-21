@@ -1,13 +1,14 @@
 import { useRef, useState } from 'react'
-import type { SpeechMark } from '../../types/lesson'
-import { useAudioStorage } from '../../hooks/useAudioStorage'
+import type { LessonAudio, SpeechMark } from '../../types/lesson'
 
 interface Props {
   lessonId: string
+  audio: LessonAudio | null
+  save: (audioUrl: string, speechMarks: SpeechMark[]) => void
+  clear: () => void
 }
 
-export function SetupTab({ lessonId }: Props) {
-  const { audio, save, clear } = useAudioStorage(lessonId)
+export function SetupTab({ audio, save, clear }: Props) {
   const [url, setUrl] = useState(audio?.audioUrl ?? '')
   const [marksRaw, setMarksRaw] = useState(
     audio?.speechMarks ? audio.speechMarks.map((m) => JSON.stringify(m)).join('\n') : ''
@@ -116,7 +117,7 @@ export function SetupTab({ lessonId }: Props) {
             ref={fileInputRef}
             id="speech-marks-file"
             type="file"
-            accept=".json"
+            accept=".json,.marks"
             className="file-upload__input"
             onChange={handleFileUpload}
           />
