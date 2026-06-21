@@ -6,7 +6,7 @@
   "locked": false,
   "lines": [
     { "speaker": "B", "speakerName": "Sina", "text": "Hi, I don't think we've met. I'm Sina. I'm with the University of Edinburgh, working on NLP." },
-    { "speaker": "A", "speakerName": "Sarah", "text": "Nice to meet you, Sina. I'm Sarah. I'm doing my PhD in Munich, and I'm right in the middle of a data science project at the moment." },
+    { "speaker": "A", "speakerName": "Sarah", "text": "Nice to meet you, Sina. I'm doing my PhD in Munich, and I'm right in the middle of a data science project at the moment." },
     { "speaker": "B", "speakerName": "Sina", "text": "Oh, what's your project about?" },
     { "speaker": "A", "speakerName": "Sarah", "text": "I'm looking at missing data in survey datasets, specifically whether standard imputation methods still hold up when the missingness isn't random." },
     { "speaker": "B", "speakerName": "Sina", "text": "Interesting. That must have some real-world applications." },
@@ -88,7 +88,7 @@
   ],
   "cleanTranslation": [
     { "speaker": "B", "text": "Hallo, ich glaube, wir kennen uns noch nicht. Ich bin Sina – ich bin an der Universität Edinburgh und arbeite an NLP." },
-    { "speaker": "A", "text": "Schön, dich kennenzulernen, Sina. Ich bin Sarah. Ich promoviere in München und bin gerade mitten in einem Data-Science-Projekt." },
+    { "speaker": "A", "text": "Schön, dich kennenzulernen, Sina. Ich promoviere in München und bin gerade mitten in einem Data-Science-Projekt." },
     { "speaker": "B", "text": "Oh, worum geht es dabei?" },
     { "speaker": "A", "text": "Ich untersuche fehlende Daten in Umfrage-Datensätzen – konkret, ob Standardmethoden zur Imputation noch funktionieren, wenn das Fehlen der Daten nicht zufällig ist." },
     { "speaker": "B", "text": "Interessant. Das hat sicherlich einige praktische Anwendungen." },
