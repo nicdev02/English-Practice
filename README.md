@@ -21,7 +21,7 @@ Speaker attribution (who said what) comes from the lesson JSON, not the audio. T
 
 Send Polly **plain dialog text without speaker labels** — one line per utterance is fine. This gives a 1:1 match between speech marks and displayed words for accurate sync.
 
-Note: em dashes (`—`) in the text are skipped during sync matching because Polly doesn't produce a speech mark for them. The sync stays accurate across the entire dialog regardless.
+Note: em dashes (`—`) are skipped during sync matching because Polly doesn't produce a speech mark for them. Underscore-joined identifiers (e.g. `flag_outliers`) are split by Polly into separate marks (`flag_`, `outliers`) and automatically re-joined during matching. The sync stays accurate in both cases.
 
 ## Tech stack
 
@@ -52,12 +52,14 @@ npm run preview # preview the build locally
 1. Create a new file in [src/data/lessons/](src/data/lessons/) following the naming convention `NN-slug.json`.
 2. Use this JSON schema:
 
+The `tag` must match one of the dashboard categories: `"Uni / Data Science"`, `"Konferenz"`, or `"Alltag"`.
+
 ```json
 {
-  "id": "03-my-lesson",
+  "id": "05-my-lesson",
   "title": "My lesson title",
-  "eyebrow": "Lesson 03 · Context",
-  "tag": "Category",
+  "eyebrow": "Einheit 1 · Context",
+  "tag": "Uni / Data Science",
   "locked": false,
   "lines": [
     { "speaker": "A", "speakerName": "Anna", "text": "Hello." },
@@ -123,7 +125,6 @@ Nothing special — maybe a walk if the weather holds. What about you?
 
 ### Uni / Data Science
 
-- **The code review** — Emma looks over Sarah's code; constructive feedback, explaining logic, accepting critique
 - **Presenting to non-technical people** — Sarah explains a model without jargon to her professor or a stakeholder
 - **Disagreeing in a meeting** — politely but clearly pushing back on someone else's point
 - **Asking for feedback on a paper** — giving and receiving written feedback on a draft
