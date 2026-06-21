@@ -12,7 +12,7 @@ export function LessonList({ lessons, onSelect }: Props) {
         <p className="site-eyebrow">Personal Language Practice</p>
         <h1 className="site-title">English Speaking Practice</h1>
         <p className="site-subtitle">
-          Birkenbihl method · Shadowing · Amazon Polly audio
+          Speak English, you must · Fear not the words, hmm
         </p>
       </header>
 
