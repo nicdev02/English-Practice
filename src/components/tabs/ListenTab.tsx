@@ -1,5 +1,5 @@
-import { useState, useRef, useCallback } from 'react'
-import type { Lesson, LessonAudio } from '../../types/lesson'
+import { useState, useCallback, useMemo } from 'react'
+import type { Lesson, LessonAudio, SpeechMark } from '../../types/lesson'
 import { AudioPlayer } from '../AudioPlayer'
 
 type SpeakerFilter = 'both' | 'A' | 'B'
@@ -10,28 +10,68 @@ interface Props {
   onGoToSetup: () => void
 }
 
+function normalize(s: string) {
+  return s.toLowerCase().replace(/[^a-z0-9']/g, '')
+}
+
+// Maps each speech mark index to its displayed-word index.
+// Speech marks for words not shown (e.g. speaker labels sent to Polly) get -1.
+function buildMarkToWordIdx(marks: SpeechMark[], displayedWords: string[]): number[] {
+  const result = new Array(marks.length).fill(-1)
+  let wordPtr = 0
+  for (let i = 0; i < marks.length && wordPtr < displayedWords.length; i++) {
+    if (normalize(marks[i].value) === normalize(displayedWords[wordPtr])) {
+      result[i] = wordPtr
+      wordPtr++
+    }
+  }
+  return result
+}
+
 export function ListenTab({ lesson, audio, onGoToSetup }: Props) {
-  const [activeWordIdx, setActiveWordIdx] = useState<number>(-1)
+  const [activeWordIdx, setActiveWordIdx] = useState(-1)
   const [speakerFilter, setSpeakerFilter] = useState<SpeakerFilter>('both')
-  const wordSpansRef = useRef<(HTMLSpanElement | null)[]>([])
+
+  const speakerNames = {
+    A: lesson.lines.find((l) => l.speaker === 'A')?.speakerName ?? 'A',
+    B: lesson.lines.find((l) => l.speaker === 'B')?.speakerName ?? 'B',
+  }
+
+  const allWords = useMemo(() => {
+    const words: string[] = []
+    lesson.lines.forEach((line) => {
+      line.text.split(/\s+/).forEach((w) => { if (w) words.push(w) })
+    })
+    return words
+  }, [lesson])
+
+  const markToWordIdx = useMemo(
+    () => (audio?.speechMarks ? buildMarkToWordIdx(audio.speechMarks, allWords) : []),
+    [audio, allWords]
+  )
 
   const handleTimeUpdate = useCallback(
     (timeMs: number) => {
-      if (!audio?.speechMarks) return
+      if (!audio?.speechMarks?.length) return
       const marks = audio.speechMarks
-      let idx = -1
+      let lastMark = -1
       for (let i = 0; i < marks.length; i++) {
-        if (marks[i].time <= timeMs) idx = i
+        if (marks[i].time <= timeMs) lastMark = i
         else break
       }
-      setActiveWordIdx(idx)
+      if (lastMark === -1) { setActiveWordIdx(-1); return }
+      for (let i = lastMark; i >= 0; i--) {
+        if (markToWordIdx[i] !== -1) {
+          setActiveWordIdx(markToWordIdx[i])
+          return
+        }
+      }
+      setActiveWordIdx(-1)
     },
-    [audio]
+    [audio, markToWordIdx]
   )
 
-  const handleEnded = useCallback(() => {
-    setActiveWordIdx(-1)
-  }, [])
+  const handleEnded = useCallback(() => setActiveWordIdx(-1), [])
 
   if (!audio) {
     return (
@@ -39,7 +79,7 @@ export function ListenTab({ lesson, audio, onGoToSetup }: Props) {
         <div className="no-audio-box">
           <p className="no-audio-box__title">No audio connected yet</p>
           <p className="no-audio-box__body">
-            Generate audio with Amazon Polly and paste the URL + Speech Marks in the Setup tab.
+            Generate audio with Amazon Polly and add the URL + Speech Marks in the Setup tab.
           </p>
           <button className="btn btn--primary" onClick={onGoToSetup}>
             Go to Setup
@@ -49,53 +89,34 @@ export function ListenTab({ lesson, audio, onGoToSetup }: Props) {
     )
   }
 
-  const speakerNames = {
-    A: lesson.lines.find((l) => l.speaker === 'A')?.speakerName ?? 'A',
-    B: lesson.lines.find((l) => l.speaker === 'B')?.speakerName ?? 'B',
-  }
-
-  const wordElements: React.ReactNode[] = []
   let wordIdx = 0
-  let charPos = 0
-
-  lesson.lines.forEach((line, lineIdx) => {
-    if (lineIdx > 0) {
-      wordElements.push(<span key={`space-${lineIdx}`}> </span>)
-      charPos++
-    }
-
-    const words = line.text.split(/(\s+)/)
+  const lineElements = lesson.lines.map((line, lineIdx) => {
     const isDimmed = speakerFilter !== 'both' && line.speaker !== speakerFilter
-
-    words.forEach((chunk, chunkIdx) => {
-      if (/^\s+$/.test(chunk)) {
-        wordElements.push(<span key={`ws-${lineIdx}-${chunkIdx}`}>{chunk}</span>)
-        charPos += chunk.length
-        return
+    const wordSpans = line.text.split(/(\s+)/).map((chunk, chunkIdx) => {
+      if (/^\s+$/.test(chunk) || chunk === '') {
+        return <span key={`ws-${lineIdx}-${chunkIdx}`}>{chunk}</span>
       }
-
-      const currentWordIdx = wordIdx
-      const isHighlighted = activeWordIdx === currentWordIdx
-
-      wordElements.push(
+      const currentIdx = wordIdx++
+      return (
         <span
           key={`w-${lineIdx}-${chunkIdx}`}
-          ref={(el) => { wordSpansRef.current[currentWordIdx] = el }}
-          className={[
-            'listen-word',
-            isHighlighted ? 'listen-word--active' : '',
-            isDimmed ? 'listen-word--dimmed' : '',
-          ].join(' ')}
+          className={`listen-word${activeWordIdx === currentIdx ? ' listen-word--active' : ''}`}
         >
           {chunk}
         </span>
       )
-      charPos += chunk.length
-      wordIdx++
     })
-  })
 
-  void charPos  // consumed while building wordElements
+    return (
+      <div
+        key={lineIdx}
+        className={`listen-line listen-line--${line.speaker.toLowerCase()}${isDimmed ? ' listen-line--dimmed' : ''}`}
+      >
+        <span className="listen-line__speaker">{line.speakerName}</span>
+        <p className="listen-line__text">{wordSpans}</p>
+      </div>
+    )
+  })
 
   return (
     <div className="listen-tab">
@@ -112,16 +133,12 @@ export function ListenTab({ lesson, audio, onGoToSetup }: Props) {
         ))}
       </div>
 
-      <div className="listen-tab__text" aria-live="polite" aria-label="Transcript">
-        {wordElements}
+      <div className="listen-tab__lines" aria-live="polite" aria-label="Transcript">
+        {lineElements}
       </div>
 
       <div className="listen-tab__player">
-        <AudioPlayer
-          src={audio.audioUrl}
-          onTimeUpdate={handleTimeUpdate}
-          onEnded={handleEnded}
-        />
+        <AudioPlayer src={audio.audioUrl} onTimeUpdate={handleTimeUpdate} onEnded={handleEnded} />
       </div>
     </div>
   )

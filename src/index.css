@@ -549,11 +549,38 @@ img, svg { display: block; }
   outline-offset: 2px;
 }
 
-.listen-tab__text {
-  font-size: var(--text-lg);
-  line-height: 2.1;
-  color: var(--color-text);
+.listen-tab__lines {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
   margin-bottom: 2rem;
+}
+
+.listen-line {
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+  gap: 0.5rem 0.75rem;
+  transition: opacity 150ms;
+}
+
+.listen-line--dimmed { opacity: 0.25; }
+
+.listen-line__speaker {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding-top: 0.3em;
+  white-space: nowrap;
+}
+
+.listen-line--a .listen-line__speaker { color: var(--color-speaker-a); }
+.listen-line--b .listen-line__speaker { color: var(--color-speaker-b); }
+
+.listen-line__text {
+  font-size: var(--text-lg);
+  line-height: 1.9;
+  color: var(--color-text);
   letter-spacing: 0.01em;
 }
 
@@ -566,10 +593,6 @@ img, svg { display: block; }
 .listen-word--active {
   background-color: var(--color-accent-highlight);
   color: var(--color-text);
-}
-
-.listen-word--dimmed {
-  opacity: 0.3;
 }
 
 .listen-tab__player {
