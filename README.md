@@ -7,9 +7,8 @@ A personal language-learning tool for practising free speaking in English (B2 le
 ## Features
 
 - **Read tab** — dialog in two views: original English and clean German translation
-- **Listen & follow tab** — karaoke-style word highlighting synced to Amazon Polly audio; per-speaker line layout; speaker filter (show only A, B, or both); adjustable playback speed
+- **Listen & follow tab** — karaoke-style word highlighting synced to Amazon Polly audio; click any word to jump to that position and start playback; per-speaker line layout; speaker filter (show only A, B, or both); adjustable playback speed
 - **Vocabulary tab** — lesson word list (EN / DE)
-- **Setup tab** — optionally override pre-configured audio with your own Polly MP3 URL and Speech Marks file; stored in `localStorage`, never in the lesson file
 
 ## Audio workflow
 
@@ -22,13 +21,12 @@ Speaker attribution (who said what) comes from the lesson JSON, not the audio. T
 
 Send Polly **plain dialog text without speaker labels** — one line per utterance is fine. This gives a 1:1 match between speech marks and displayed words for accurate sync.
 
-Users can always override the default audio per lesson via the Setup tab.
+Note: em dashes (`—`) in the text are skipped during sync matching because Polly doesn't produce a speech mark for them. The sync stays accurate across the entire dialog regardless.
 
 ## Tech stack
 
 - Vite + React + TypeScript
 - Plain CSS with custom properties (no UI library)
-- `localStorage` for per-lesson audio overrides
 - Deployed to GitHub Pages via GitHub Actions (auto-deploy on push to `main`)
 
 ---
@@ -56,9 +54,9 @@ npm run preview # preview the build locally
 
 ```json
 {
-  "id": "02-my-lesson",
+  "id": "03-my-lesson",
   "title": "My lesson title",
-  "eyebrow": "Lesson 02 · Context",
+  "eyebrow": "Lesson 03 · Context",
   "tag": "Category",
   "locked": false,
   "lines": [
@@ -87,13 +85,13 @@ npm run preview # preview the build locally
 2. In `src/data/lessons.ts`, import the marks file and attach `defaultAudio`:
 
 ```ts
-import rawMarks02 from '../../public/speech-marks/your-lesson-02.marks?raw'
+import rawMarks03 from '../../public/speech-marks/your-lesson-03.marks?raw'
 
 {
-  ...(lesson02 as Lesson),
+  ...(lesson03 as Lesson),
   defaultAudio: {
-    audioUrl: 'audio/your-lesson-02.mp3',
-    speechMarks: parseMarks(rawMarks02),
+    audioUrl: 'audio/your-lesson-03.mp3',
+    speechMarks: parseMarks(rawMarks03),
   },
 }
 ```
@@ -111,10 +109,10 @@ The speech marks are embedded at build time — no runtime fetch needed.
 5. Download the `.mp3` and `.marks` files separately (two export runs needed — one for audio, one for speech marks).
 6. Place them in `public/audio/` and `public/speech-marks/`, then wire them up in `lessons.ts` (see above).
 
-Example input for Polly (Lesson 01):
+Example input for Polly (Lesson 03):
 ```
-Hey Emma, do you have a minute before the meeting?
-I wanted to ask you about the dataset.
-Sure, what's going on? You sounded a bit stressed in your message.
+Are you heading off soon? It's almost five.
+Yeah, nearly. What are you up to this weekend?
+Nothing special — maybe a walk if the weather holds. What about you?
 ...
 ```
