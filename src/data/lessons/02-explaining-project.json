@@ -3,9 +3,117 @@
   "title": "Explaining your project",
   "eyebrow": "Lesson 02 · Conference small talk",
   "tag": "Konferenz",
-  "locked": true,
-  "lines": [],
-  "decoded": [],
-  "cleanTranslation": [],
-  "vocab": []
+  "locked": false,
+  "lines": [
+    { "speaker": "B", "speakerName": "Sina", "text": "Hi, I don't think we've met. I'm Sina — I'm with the University of Edinburgh, working on NLP." },
+    { "speaker": "A", "speakerName": "Sarah", "text": "Nice to meet you, Sina. I'm Sarah. I'm doing my PhD in Munich, and I'm right in the middle of a data science project at the moment." },
+    { "speaker": "B", "speakerName": "Sina", "text": "Oh, what's your project about?" },
+    { "speaker": "A", "speakerName": "Sarah", "text": "I'm looking at missing data in survey datasets — specifically whether standard imputation methods still hold up when the missingness isn't random." },
+    { "speaker": "B", "speakerName": "Sina", "text": "Interesting. That must have some real-world applications." },
+    { "speaker": "A", "speakerName": "Sarah", "text": "It does. The tricky part is convincing people that cleaning the data is actually the research, not just the preparation stage." },
+    { "speaker": "B", "speakerName": "Sina", "text": "Ha — that's a battle everyone fights. Are you presenting here?" },
+    { "speaker": "A", "speakerName": "Sarah", "text": "Yes, I have a poster tomorrow morning. It's my first time presenting in English at a conference, so I'm a little nervous." },
+    { "speaker": "B", "speakerName": "Sina", "text": "Your English sounds completely fine to me. Don't overthink it — just have the conversation, the way we're having it now." },
+    { "speaker": "A", "speakerName": "Sarah", "text": "That's easy to say. I tend to go blank when I feel like I'm being evaluated." },
+    { "speaker": "B", "speakerName": "Sina", "text": "Everyone does. The trick is to find something in the work that genuinely excites you and lead with that." },
+    { "speaker": "A", "speakerName": "Sarah", "text": "Mine would be the moment when the patterns in the data suddenly started making sense — like the data was telling a story." },
+    { "speaker": "B", "speakerName": "Sina", "text": "That's exactly the moment worth talking about. Good luck tomorrow — I'll look out for your poster." }
+  ],
+  "decoded": [
+    {
+      "speaker": "B",
+      "original": "Hi, I don't think we've met. I'm Sina — I'm with the University of Edinburgh, working on NLP.",
+      "wordForWord": "Hi, ich denke nicht wir haben uns getroffen. Ich bin Sina — ich bin mit der Universität von Edinburgh, arbeitend an NLP."
+    },
+    {
+      "speaker": "A",
+      "original": "Nice to meet you, Sina. I'm doing my PhD in Munich, and I'm right in the middle of a data science project at the moment.",
+      "wordForWord": "Schön dich zu treffen, Sina. Ich mache meinen Doktor in München, und ich bin genau in der Mitte eines Datenwissenschaft-Projekts im Moment."
+    },
+    {
+      "speaker": "B",
+      "original": "Oh, what's your project about?",
+      "wordForWord": "Oh, was ist dein Projekt über?"
+    },
+    {
+      "speaker": "A",
+      "original": "I'm looking at missing data in survey datasets — specifically whether standard imputation methods still hold up when the missingness isn't random.",
+      "wordForWord": "Ich schaue auf fehlende Daten in Umfrage-Datensätzen — spezifisch ob Standard-Imputation-Methoden noch standhalten wenn das Fehlen nicht zufällig ist."
+    },
+    {
+      "speaker": "B",
+      "original": "Interesting. That must have some real-world applications.",
+      "wordForWord": "Interessant. Das muss haben einige Real-Welt-Anwendungen."
+    },
+    {
+      "speaker": "A",
+      "original": "It does. The tricky part is convincing people that cleaning the data is actually the research, not just the preparation stage.",
+      "wordForWord": "Das hat. Der knifflige Teil ist überzeugen Leute dass reinigen die Daten tatsächlich die Forschung ist, nicht nur die Vorbereitungsphase."
+    },
+    {
+      "speaker": "B",
+      "original": "Ha — that's a battle everyone fights. Are you presenting here?",
+      "wordForWord": "Ha — das ist ein Kampf den jeder kämpft. Präsentierst du hier?"
+    },
+    {
+      "speaker": "A",
+      "original": "Yes, I have a poster tomorrow morning. It's my first time presenting in English at a conference, so I'm a little nervous.",
+      "wordForWord": "Ja, ich habe ein Poster morgen früh. Es ist mein erstes Mal präsentieren auf Englisch auf einer Konferenz, also bin ich ein bisschen nervös."
+    },
+    {
+      "speaker": "B",
+      "original": "Your English sounds completely fine to me. Don't overthink it — just have the conversation, the way we're having it now.",
+      "wordForWord": "Dein Englisch klingt komplett gut für mich. Denke nicht zu viel nach — hab einfach das Gespräch, so wie wir es haben jetzt."
+    },
+    {
+      "speaker": "A",
+      "original": "That's easy to say. I tend to go blank when I feel like I'm being evaluated.",
+      "wordForWord": "Das ist einfach zu sagen. Ich neige dazu zu gehen leer wenn ich fühle wie ich werde bewertet."
+    },
+    {
+      "speaker": "B",
+      "original": "Everyone does. The trick is to find something in the work that genuinely excites you and lead with that.",
+      "wordForWord": "Jeder tut das. Der Trick ist zu finden etwas in der Arbeit das wirklich begeistert dich und führe damit."
+    },
+    {
+      "speaker": "A",
+      "original": "Mine would be the moment when the patterns in the data suddenly started making sense — like the data was telling a story.",
+      "wordForWord": "Meins wäre der Moment wenn die Muster in den Daten plötzlich anfingen Sinn zu machen — wie die Daten erzählten eine Geschichte."
+    },
+    {
+      "speaker": "B",
+      "original": "That's exactly the moment worth talking about. Good luck tomorrow — I'll look out for your poster.",
+      "wordForWord": "Das ist genau der Moment wert zu reden über. Viel Glück morgen — ich werde Ausschau halten nach deinem Poster."
+    }
+  ],
+  "cleanTranslation": [
+    { "speaker": "B", "text": "Hallo, ich glaube, wir kennen uns noch nicht. Ich bin Sina – ich bin an der Universität Edinburgh und arbeite an NLP." },
+    { "speaker": "A", "text": "Schön, dich kennenzulernen, Sina. Ich bin Sarah. Ich promoviere in München und bin gerade mitten in einem Data-Science-Projekt." },
+    { "speaker": "B", "text": "Oh, worum geht es dabei?" },
+    { "speaker": "A", "text": "Ich untersuche fehlende Daten in Umfrage-Datensätzen – konkret, ob Standardmethoden zur Imputation noch funktionieren, wenn das Fehlen der Daten nicht zufällig ist." },
+    { "speaker": "B", "text": "Interessant. Das hat sicherlich einige praktische Anwendungen." },
+    { "speaker": "A", "text": "Ja. Das Schwierige ist, die Leute davon zu überzeugen, dass das Bereinigen der Daten selbst die Forschung ist – und nicht nur eine Vorbereitungsphase." },
+    { "speaker": "B", "text": "Ha – das ist ein Kampf, den alle kennen. Präsentierst du hier auch etwas?" },
+    { "speaker": "A", "text": "Ja, ich habe morgen früh ein Poster. Es ist das erste Mal, dass ich auf Englisch auf einer Konferenz präsentiere – ich bin daher ein bisschen nervös." },
+    { "speaker": "B", "text": "Dein Englisch klingt für mich völlig einwandfrei. Denk nicht zu viel darüber nach – führ einfach das Gespräch, so wie wir es gerade führen." },
+    { "speaker": "A", "text": "Das sagt sich leicht. Ich neige dazu, einen Blackout zu bekommen, wenn ich das Gefühl habe, bewertet zu werden." },
+    { "speaker": "B", "text": "Das geht allen so. Der Trick ist, etwas in deiner Arbeit zu finden, das dich wirklich begeistert, und damit anzufangen." },
+    { "speaker": "A", "text": "Bei mir wäre das der Moment, in dem die Muster in den Daten plötzlich Sinn ergaben – als würden die Daten eine Geschichte erzählen." },
+    { "speaker": "B", "text": "Genau das ist der Moment, über den es sich zu reden lohnt. Viel Erfolg morgen – ich halte Ausschau nach deinem Poster." }
+  ],
+  "vocab": [
+    { "en": "I don't think we've met", "de": "Ich glaube, wir kennen uns noch nicht" },
+    { "en": "to hold up", "de": "standhalten / sich bewähren (unter bestimmten Bedingungen)" },
+    { "en": "missingness", "de": "das Fehlen (von Daten) / Datenlücken" },
+    { "en": "tricky", "de": "knifflig / heikel" },
+    { "en": "to convince someone", "de": "jemanden überzeugen" },
+    { "en": "preparation stage", "de": "Vorbereitungsphase" },
+    { "en": "to overthink it", "de": "zu viel darüber nachdenken" },
+    { "en": "to go blank", "de": "einen Blackout haben / den Faden verlieren" },
+    { "en": "to be evaluated", "de": "bewertet werden" },
+    { "en": "genuinely", "de": "wirklich / aufrichtig / tatsächlich" },
+    { "en": "to lead with something", "de": "mit etwas anfangen / etwas in den Vordergrund stellen" },
+    { "en": "to make sense", "de": "Sinn ergeben / verständlich sein" },
+    { "en": "to look out for", "de": "Ausschau halten nach" }
+  ]
 }
