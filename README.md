@@ -13,12 +13,14 @@ A personal language-learning tool for practising free speaking in English (B2 le
 
 ## Audio workflow
 
-Lessons can ship with **pre-configured audio** so no setup is needed on any device (including mobile). Audio files live in the repo and are referenced at build time:
+Lessons ship with **pre-configured audio** — no setup needed on any device including mobile. Audio files live in the repo and are embedded at build time:
 
 - MP3 → `public/audio/`
 - Speech Marks (`.marks`) → `public/speech-marks/`
 
-The app uses Amazon Polly's word-level Speech Marks for karaoke highlighting. If the text sent to Polly contained speaker labels (e.g. `A:`, `B:`), the app automatically skips those marks — the sync stays correct without regenerating audio.
+Speaker attribution (who said what) comes from the lesson JSON, not the audio. The audio is a flat recording; Amazon Polly's word-level Speech Marks provide only the timestamps for karaoke highlighting.
+
+Send Polly **plain dialog text without speaker labels** — one line per utterance is fine. This gives a 1:1 match between speech marks and displayed words for accurate sync.
 
 Users can always override the default audio per lesson via the Setup tab.
 
@@ -103,8 +105,16 @@ The speech marks are embedded at build time — no runtime fetch needed.
 ## Generating Amazon Polly audio
 
 1. In the AWS Console, go to **Amazon Polly → Text-to-speech**.
-2. Paste the lesson dialog as plain text — **without speaker labels** for best sync accuracy.
+2. Paste the lesson dialog as plain text — **no speaker labels**, just the lines one after another.
 3. Choose a **Neural** English voice (e.g. *Joanna* or *Amy*).
 4. Under **Additional settings**, enable **Speech Marks** → type: **word**.
 5. Download the `.mp3` and `.marks` files.
 6. Place them in `public/audio/` and `public/speech-marks/`, then wire them up in `lessons.ts` (see above).
+
+Example input for Polly (Lesson 01):
+```
+Hey Emma, do you have a minute before the meeting?
+I wanted to ask you about the dataset.
+Sure, what's going on? You sounded a bit stressed in your message.
+...
+```
