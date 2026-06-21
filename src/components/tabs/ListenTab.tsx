@@ -20,6 +20,10 @@ function buildMarkToWordIdx(marks: SpeechMark[], displayedWords: string[]): numb
   const result = new Array(marks.length).fill(-1)
   let wordPtr = 0
   for (let i = 0; i < marks.length && wordPtr < displayedWords.length; i++) {
+    while (wordPtr < displayedWords.length && normalize(displayedWords[wordPtr]) === '') {
+      wordPtr++
+    }
+    if (wordPtr >= displayedWords.length) break
     if (normalize(marks[i].value) === normalize(displayedWords[wordPtr])) {
       result[i] = wordPtr
       wordPtr++
