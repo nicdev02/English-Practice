@@ -56,7 +56,7 @@ The `tag` must match one of the dashboard categories: `"Uni / Data Science"`, `"
 
 ```json
 {
-  "id": "05-my-lesson",
+  "id": "06-my-lesson",
   "title": "My lesson title",
   "eyebrow": "Einheit 1 · Context",
   "tag": "Uni / Data Science",
