@@ -3,9 +3,117 @@
   "title": "Weekend plans",
   "eyebrow": "Lesson 03 · Everyday conversation",
   "tag": "Alltag",
-  "locked": true,
-  "lines": [],
-  "decoded": [],
-  "cleanTranslation": [],
-  "vocab": []
+  "locked": false,
+  "lines": [
+    { "speaker": "B", "speakerName": "Emma", "text": "Are you heading off soon? It's almost five." },
+    { "speaker": "A", "speakerName": "Sarah", "text": "Yeah, nearly. What are you up to this weekend?" },
+    { "speaker": "B", "speakerName": "Emma", "text": "Nothing special — maybe a walk if the weather holds. What about you?" },
+    { "speaker": "A", "speakerName": "Sarah", "text": "Honestly, I keep telling myself I'll take a proper break, but I always end up back at my laptop." },
+    { "speaker": "B", "speakerName": "Emma", "text": "Sarah. It's the weekend. Close the laptop." },
+    { "speaker": "A", "speakerName": "Sarah", "text": "I know. I think I'm just not very good at switching off." },
+    { "speaker": "B", "speakerName": "Emma", "text": "What would you actually do, if you gave yourself permission?" },
+    { "speaker": "A", "speakerName": "Sarah", "text": "There's a lake near where I live that I've been meaning to check out. I could go there on Saturday." },
+    { "speaker": "B", "speakerName": "Emma", "text": "That sounds perfect. You could really do with some fresh air." },
+    { "speaker": "A", "speakerName": "Sarah", "text": "My sister's coming on Sunday, so we'll probably just wander around and find somewhere to eat." },
+    { "speaker": "B", "speakerName": "Emma", "text": "That's a proper weekend. The data will still be there on Monday." },
+    { "speaker": "A", "speakerName": "Sarah", "text": "You're right. I think I just need to get out of my own head a bit." },
+    { "speaker": "B", "speakerName": "Emma", "text": "Exactly. And if you make it to the lake, take a photo — I want to see it." }
+  ],
+  "decoded": [
+    {
+      "speaker": "B",
+      "original": "Are you heading off soon? It's almost five.",
+      "wordForWord": "Gehst du weg bald? Es ist fast fünf."
+    },
+    {
+      "speaker": "A",
+      "original": "Yeah, nearly. What are you up to this weekend?",
+      "wordForWord": "Ja, fast. Was bist du bis dieses Wochenende?"
+    },
+    {
+      "speaker": "B",
+      "original": "Nothing special — maybe a walk if the weather holds. What about you?",
+      "wordForWord": "Nichts Besonderes — vielleicht ein Spaziergang wenn das Wetter hält. Was ist mit dir?"
+    },
+    {
+      "speaker": "A",
+      "original": "Honestly, I keep telling myself I'll take a proper break, but I always end up back at my laptop.",
+      "wordForWord": "Ehrlich, ich halte mir zu sagen ich werde nehmen eine richtige Pause, aber ich ende immer zurück an meinem Laptop."
+    },
+    {
+      "speaker": "B",
+      "original": "Sarah. It's the weekend. Close the laptop.",
+      "wordForWord": "Sarah. Es ist das Wochenende. Schließe den Laptop."
+    },
+    {
+      "speaker": "A",
+      "original": "I know. I think I'm just not very good at switching off.",
+      "wordForWord": "Ich weiß. Ich denke ich bin einfach nicht sehr gut beim Abschalten."
+    },
+    {
+      "speaker": "B",
+      "original": "What would you actually do, if you gave yourself permission?",
+      "wordForWord": "Was würdest du tatsächlich tun, wenn du dir selbst die Erlaubnis gibst?"
+    },
+    {
+      "speaker": "A",
+      "original": "There's a lake near where I live that I've been meaning to check out. I could go there on Saturday.",
+      "wordForWord": "Es gibt einen See nah wo ich lebe den ich habe gemeint zu überprüfen aus. Ich könnte dort hingehen am Samstag."
+    },
+    {
+      "speaker": "B",
+      "original": "That sounds perfect. You could really do with some fresh air.",
+      "wordForWord": "Das klingt perfekt. Du könntest wirklich tun mit etwas frischer Luft."
+    },
+    {
+      "speaker": "A",
+      "original": "My sister's coming on Sunday, so we'll probably just wander around and find somewhere to eat.",
+      "wordForWord": "Meine Schwester kommt am Sonntag, also werden wir wahrscheinlich einfach herumwandern und irgendwo finden zum Essen."
+    },
+    {
+      "speaker": "B",
+      "original": "That's a proper weekend. The data will still be there on Monday.",
+      "wordForWord": "Das ist ein richtiges Wochenende. Die Daten werden noch da sein am Montag."
+    },
+    {
+      "speaker": "A",
+      "original": "You're right. I think I just need to get out of my own head a bit.",
+      "wordForWord": "Du hast Recht. Ich denke ich brauche einfach herauszukommen aus meinem eigenen Kopf ein bisschen."
+    },
+    {
+      "speaker": "B",
+      "original": "Exactly. And if you make it to the lake, take a photo — I want to see it.",
+      "wordForWord": "Genau. Und wenn du es schaffst zum See, mach ein Foto — ich will es sehen."
+    }
+  ],
+  "cleanTranslation": [
+    { "speaker": "B", "text": "Gehst du bald? Es ist fast fünf." },
+    { "speaker": "A", "text": "Ja, fast. Was hast du dieses Wochenende vor?" },
+    { "speaker": "B", "text": "Nichts Besonderes – vielleicht ein Spaziergang, wenn das Wetter mithält. Und du?" },
+    { "speaker": "A", "text": "Ehrlich gesagt sage ich mir immer wieder, dass ich eine richtige Pause machen werde – aber dann lande ich doch wieder am Laptop." },
+    { "speaker": "B", "text": "Sarah. Es ist Wochenende. Mach den Laptop zu." },
+    { "speaker": "A", "text": "Ich weiß. Ich glaube, ich bin einfach nicht besonders gut darin abzuschalten." },
+    { "speaker": "B", "text": "Was würdest du eigentlich machen, wenn du dir selbst die Erlaubnis gibst?" },
+    { "speaker": "A", "text": "Es gibt einen See in der Nähe, wo ich wohne, den ich schon länger mal erkunden wollte. Ich könnte Samstag dorthin gehen." },
+    { "speaker": "B", "text": "Das klingt perfekt. Frische Luft würde dir wirklich guttun." },
+    { "speaker": "A", "text": "Meine Schwester kommt am Sonntag, also werden wir wahrscheinlich einfach ein bisschen herumschlendern und irgendwo essen gehen." },
+    { "speaker": "B", "text": "Das ist ein richtiges Wochenende. Die Daten sind am Montag noch da." },
+    { "speaker": "A", "text": "Du hast recht. Ich glaube, ich muss einfach mal den Kopf ein bisschen freibekommen." },
+    { "speaker": "B", "text": "Genau. Und wenn du es zum See schaffst, mach ein Foto – ich will es sehen." }
+  ],
+  "vocab": [
+    { "en": "to head off", "de": "losgehen / aufbrechen" },
+    { "en": "What are you up to?", "de": "Was hast du vor?" },
+    { "en": "if the weather holds", "de": "wenn das Wetter mithält" },
+    { "en": "to take a proper break", "de": "eine richtige Pause einlegen" },
+    { "en": "to end up", "de": "enden / landen (bei etwas)" },
+    { "en": "to switch off", "de": "abschalten" },
+    { "en": "to give yourself permission", "de": "sich selbst die Erlaubnis geben" },
+    { "en": "I've been meaning to", "de": "ich wollte schon länger ..." },
+    { "en": "to check out", "de": "sich anschauen / erkunden" },
+    { "en": "you could do with", "de": "es würde dir guttun / du könntest ... gut gebrauchen" },
+    { "en": "to wander around", "de": "herumschlendern / umherwandern" },
+    { "en": "to get out of your own head", "de": "den Kopf freibekommen" },
+    { "en": "to make it to", "de": "es schaffen zu / rechtzeitig ankommen bei" }
+  ]
 }

@@ -4,6 +4,7 @@ import lesson02 from './lessons/02-explaining-project.json'
 import lesson03 from './lessons/03-weekend-plans.json'
 import rawMarks01 from '../../public/speech-marks/speech_20260621152910590_v3.marks?raw'
 import rawMarks02 from '../../public/speech-marks/speech_20260621154036967_lesson2.marks?raw'
+import rawMarks03 from '../../public/speech-marks/speech_20260621160432134_lesson3.marks?raw'
 
 function parseMarks(raw: string): SpeechMark[] {
   return raw.trim().split('\n').filter(Boolean).map((l) => JSON.parse(l) as SpeechMark)
@@ -24,5 +25,11 @@ export const lessons: Lesson[] = [
       speechMarks: parseMarks(rawMarks02),
     },
   },
-  lesson03 as Lesson,
+  {
+    ...(lesson03 as Lesson),
+    defaultAudio: {
+      audioUrl: 'audio/speech_20260621160408683_lesson3.mp3',
+      speechMarks: parseMarks(rawMarks03),
+    },
+  },
 ]
