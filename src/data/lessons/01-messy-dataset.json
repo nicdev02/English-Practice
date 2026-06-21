@@ -1,0 +1,117 @@
+{
+  "id": "01-messy-dataset",
+  "title": "The messy dataset",
+  "eyebrow": "Lesson 01 · Data science meeting",
+  "tag": "Uni / Data Science",
+  "locked": false,
+  "lines": [
+    { "speaker": "A", "speakerName": "Sarah", "text": "Hey Emma, do you have a minute before the meeting?" },
+    { "speaker": "A", "speakerName": "Sarah", "text": "I wanted to ask you about the dataset." },
+    { "speaker": "B", "speakerName": "Emma",  "text": "Sure, what's going on? You sounded a bit stressed in your message." },
+    { "speaker": "A", "speakerName": "Sarah", "text": "It's the Bike Buyers data again. Half the entries are missing values, and I can't tell if it's random or if there's a pattern behind it." },
+    { "speaker": "B", "speakerName": "Emma",  "text": "Have you checked whether the missing values cluster around a specific column? Sometimes it's just one field that wasn't filled in properly." },
+    { "speaker": "A", "speakerName": "Sarah", "text": "That's exactly what I'm trying to figure out. I ran a quick visualisation last night, but I didn't have time to dig deeper." },
+    { "speaker": "B", "speakerName": "Emma",  "text": "Honestly, that's the right instinct. Before you jump into imputation, you really want to understand why the data is missing in the first place." },
+    { "speaker": "A", "speakerName": "Sarah", "text": "Right, missing completely at random versus missing not at random. I keep mixing those terms up in conversation, even though I understand them fine on paper." },
+    { "speaker": "B", "speakerName": "Emma",  "text": "That happens to almost everyone. It's one thing to read about it, and a completely different thing to explain it out loud, especially under a bit of pressure." },
+    { "speaker": "A", "speakerName": "Sarah", "text": "Exactly my problem. Anyway, do you think it's worth bringing this up in the meeting, or should I sort it out first?" },
+    { "speaker": "B", "speakerName": "Emma",  "text": "Bring it up. The students will benefit more from watching you think out loud than from a perfectly polished answer." },
+    { "speaker": "A", "speakerName": "Sarah", "text": "That's fair. I suppose I'm just not used to thinking out loud in English." },
+    { "speaker": "B", "speakerName": "Emma",  "text": "Then today's a good day to start. Worst case, you stumble over a word — nobody's going to mind." }
+  ],
+  "decoded": [
+    {
+      "speaker": "A",
+      "original": "Hey Emma, do you have a minute before the meeting?",
+      "wordForWord": "Hey Emma, hast du eine Minute bevor dem Meeting?"
+    },
+    {
+      "speaker": "A",
+      "original": "I wanted to ask you about the dataset.",
+      "wordForWord": "Ich wollte dich fragen über den Datensatz."
+    },
+    {
+      "speaker": "B",
+      "original": "Sure, what's going on? You sounded a bit stressed in your message.",
+      "wordForWord": "Sicher, was geht vor? Du klangst ein bisschen gestresst in deiner Nachricht."
+    },
+    {
+      "speaker": "A",
+      "original": "It's the Bike Buyers data again. Half the entries are missing values, and I can't tell if it's random or if there's a pattern behind it.",
+      "wordForWord": "Es ist die Fahrrad-Käufer Daten wieder. Hälfte der Einträge sind fehlend Werte, und ich kann nicht sagen ob es zufällig ist oder ob es ein Muster dahinter gibt."
+    },
+    {
+      "speaker": "B",
+      "original": "Have you checked whether the missing values cluster around a specific column? Sometimes it's just one field that wasn't filled in properly.",
+      "wordForWord": "Hast du überprüft ob die fehlenden Werte häufen sich um eine spezifische Spalte? Manchmal ist es nur ein Feld das nicht ausgefüllt wurde ordentlich."
+    },
+    {
+      "speaker": "A",
+      "original": "That's exactly what I'm trying to figure out. I ran a quick visualisation last night, but I didn't have time to dig deeper.",
+      "wordForWord": "Das ist genau was ich versuche herauszufinden. Ich lief eine schnelle Visualisierung letzte Nacht, aber ich hatte keine Zeit zu graben tiefer."
+    },
+    {
+      "speaker": "B",
+      "original": "Honestly, that's the right instinct. Before you jump into imputation, you really want to understand why the data is missing in the first place.",
+      "wordForWord": "Ehrlich, das ist der richtige Instinkt. Bevor du springst in Imputation, willst du wirklich verstehen warum die Daten fehlen an erster Stelle."
+    },
+    {
+      "speaker": "A",
+      "original": "Right, missing completely at random versus missing not at random. I keep mixing those terms up in conversation, even though I understand them fine on paper.",
+      "wordForWord": "Richtig, fehlend komplett zufällig gegen fehlend nicht zufällig. Ich halte Verwechseln diese Begriffe in Gespräch, obwohl ich verstehe sie gut auf Papier."
+    },
+    {
+      "speaker": "B",
+      "original": "That happens to almost everyone. It's one thing to read about it, and a completely different thing to explain it out loud, especially under a bit of pressure.",
+      "wordForWord": "Das passiert fast jedem. Es ist eine Sache darüber zu lesen, und eine völlig andere Sache es zu erklären laut, besonders unter ein bisschen Druck."
+    },
+    {
+      "speaker": "A",
+      "original": "Exactly my problem. Anyway, do you think it's worth bringing this up in the meeting, or should I sort it out first?",
+      "wordForWord": "Genau mein Problem. So oder so, denkst du es ist wert zu bringen dies auf in dem Meeting, oder sollte ich klären es aus zuerst?"
+    },
+    {
+      "speaker": "B",
+      "original": "Bring it up. The students will benefit more from watching you think out loud than from a perfectly polished answer.",
+      "wordForWord": "Bring es auf. Die Studenten werden profitieren mehr vom Zuschauen dir denken laut als von einer perfekt polierten Antwort."
+    },
+    {
+      "speaker": "A",
+      "original": "That's fair. I suppose I'm just not used to thinking out loud in English.",
+      "wordForWord": "Das ist fair. Ich nehme an ich bin gerade nicht gewohnt zu denken laut auf Englisch."
+    },
+    {
+      "speaker": "B",
+      "original": "Then today's a good day to start. Worst case, you stumble over a word — nobody's going to mind.",
+      "wordForWord": "Dann ist heute ein guter Tag zu starten. Schlechtester Fall, du stolperst über ein Wort — niemand wird es etwas ausmachen."
+    }
+  ],
+  "cleanTranslation": [
+    { "speaker": "A", "text": "Hey Emma, hast du kurz Zeit vor dem Meeting?" },
+    { "speaker": "A", "text": "Ich wollte dich wegen des Datensatzes fragen." },
+    { "speaker": "B", "text": "Klar, was ist los? Du klangst in deiner Nachricht ein bisschen gestresst." },
+    { "speaker": "A", "text": "Es sind wieder die Fahrradkäufer-Daten. Bei der Hälfte der Einträge fehlen Werte – und ich kann nicht erkennen, ob das zufällig ist oder ob ein Muster dahintersteckt." },
+    { "speaker": "B", "text": "Hast du geprüft, ob sich die fehlenden Werte um eine bestimmte Spalte häufen? Manchmal ist es einfach ein Feld, das nicht korrekt ausgefüllt wurde." },
+    { "speaker": "A", "text": "Genau das versuche ich herauszufinden. Ich habe letzte Nacht kurz visualisiert, hatte aber keine Zeit, tiefer einzusteigen." },
+    { "speaker": "B", "text": "Ehrlich gesagt ist das der richtige Instinkt. Bevor du mit der Imputation anfängst, solltest du wirklich verstehen, warum die Daten überhaupt fehlen." },
+    { "speaker": "A", "text": "Genau – zufällig fehlend versus nicht zufällig fehlend. Im Gespräch bringe ich diese Begriffe immer durcheinander, obwohl ich sie auf dem Papier gut verstehe." },
+    { "speaker": "B", "text": "Das geht fast allen so. Es ist eine Sache, darüber zu lesen – und eine völlig andere, es laut zu erklären, besonders unter einem gewissen Druck." },
+    { "speaker": "A", "text": "Genau mein Problem. Und – glaubst du, es lohnt sich, das im Meeting anzusprechen, oder sollte ich es zuerst selbst klären?" },
+    { "speaker": "B", "text": "Sprich es an. Die Studenten profitieren mehr davon, dir beim lauten Denken zuzusehen, als von einer perfekt ausgearbeiteten Antwort." },
+    { "speaker": "A", "text": "Das stimmt. Ich glaube, ich bin es einfach nicht gewohnt, auf Englisch laut zu denken." },
+    { "speaker": "B", "text": "Dann ist heute ein guter Tag, damit anzufangen. Im schlimmsten Fall stolperst du über ein Wort – das wird niemanden stören." }
+  ],
+  "vocab": [
+    { "en": "missing values", "de": "fehlende Werte" },
+    { "en": "to cluster around", "de": "sich häufen um / sich konzentrieren auf" },
+    { "en": "to dig deeper", "de": "tiefer einsteigen / nachforschen" },
+    { "en": "imputation", "de": "Imputation (Ersetzen fehlender Werte)" },
+    { "en": "missing completely at random (MCAR)", "de": "komplett zufällig fehlend" },
+    { "en": "missing not at random (MNAR)", "de": "nicht zufällig fehlend" },
+    { "en": "to mix up", "de": "verwechseln / durcheinanderbringen" },
+    { "en": "to think out loud", "de": "laut denken" },
+    { "en": "worth bringing up", "de": "es wert, angesprochen zu werden" },
+    { "en": "to stumble over a word", "de": "über ein Wort stolpern" },
+    { "en": "polished (answer)", "de": "poliert / ausgefeilt (Antwort)" }
+  ]
+}
