@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import type { Lesson } from '../../types/lesson'
 
-type View = 'original' | 'wordForWord' | 'translation'
+type View = 'original' | 'translation'
 
 interface Props {
   lesson: Lesson
@@ -20,12 +20,6 @@ export function ReadTab({ lesson }: Props) {
           Original
         </button>
         <button
-          className={`view-toggle__btn ${view === 'wordForWord' ? 'view-toggle__btn--active' : ''}`}
-          onClick={() => setView('wordForWord')}
-        >
-          Wort für Wort
-        </button>
-        <button
           className={`view-toggle__btn ${view === 'translation' ? 'view-toggle__btn--active' : ''}`}
           onClick={() => setView('translation')}
         >
@@ -39,22 +33,6 @@ export function ReadTab({ lesson }: Props) {
             <div key={i} className={`dialog-line dialog-line--${line.speaker.toLowerCase()}`}>
               <span className="dialog-line__speaker">{line.speakerName}</span>
               <p className="dialog-line__text">{line.text}</p>
-            </div>
-          ))}
-        </div>
-      )}
-
-      {view === 'wordForWord' && (
-        <div className="dialog">
-          <p className="read-tab__hint">
-            Wortwörtliche Übersetzung nach der Birkenbihl-Methode — bewusst holprig, um die englische Satzstruktur sichtbar zu machen.
-          </p>
-          {lesson.decoded.map((line, i) => (
-            <div key={i} className={`dialog-line dialog-line--${line.speaker.toLowerCase()}`}>
-              <div className="dialog-line__pair">
-                <p className="dialog-line__original">{line.original}</p>
-                <p className="dialog-line__decoded">{line.wordForWord}</p>
-              </div>
             </div>
           ))}
         </div>

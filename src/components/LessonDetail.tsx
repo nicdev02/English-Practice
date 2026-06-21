@@ -5,7 +5,6 @@ import { ReadTab } from './tabs/ReadTab'
 import { ListenTab } from './tabs/ListenTab'
 import { VocabTab } from './tabs/VocabTab'
 import { SetupTab } from './tabs/SetupTab'
-import { RoutineBox } from './RoutineBox'
 
 type Tab = 'read' | 'listen' | 'vocab' | 'setup'
 
@@ -38,8 +37,6 @@ export function LessonDetail({ lesson, onBack }: Props) {
           <span className="lesson-card__tag">{lesson.tag}</span>
         </div>
       </div>
-
-      <RoutineBox />
 
       <nav className="tab-nav" role="tablist">
         {([
